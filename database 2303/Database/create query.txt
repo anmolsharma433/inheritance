@@ -1,0 +1,78 @@
+create table employees_list (
+	employee_id INT primary key,
+	employee_name VARCHAR(50) not null,
+	employee_address VARCHAR(50) not null,
+	employee_email VARCHAR(40) not null,
+	employee_gender enum('male','female','other') not null,
+	employee_phone varchar(15) not null
+);
+
+create table customers_list (
+	customer_id INT primary key,
+	customer_name VARCHAR(50) not null,
+	customer_address VARCHAR(50) not null,
+	customer_email VARCHAR(50) not null,
+	customer_gender enum('male','female','other') not null,
+	customer_phone VARCHAR(15) not null
+);
+
+create table restaurants_list(restaurant_id int(3) primary key,
+restaurant_name varchar(30) not null,
+restaurant_address varchar(50) not null,
+restaurant_phone varchar(15) not null,
+restaurant_email nvarchar(30) not null);
+
+create table products_list(product_id int(3) primary key,
+product_name varchar(30) not null, 
+product_description enum('vegetarian','non-vegetarian') not null,
+product_price float(5) check (product_price > 0));
+
+create table menu_list(menu_id int(3) primary key,
+menu_restaurant int(3),
+menu_product int(3), foreign key (menu_restaurant) references restaurants_list(restaurant_id),foreign key (menu_product) references products_list(product_id));
+
+create table order_history(order_id int(3) primary key,
+order_customer int(3), 
+order_employee int(3),
+order_date date not null, 
+order_status enum('on the way','in processing','delivered','cancelled') DEFAULT 'IN PROCESSING', 
+order_payment_type enum('Cash','Card') not null,
+foreign key (order_customer)
+references customers_list(customer_id),
+foreign key (order_employee)
+references employees_list(employee_id)
+);
+
+create table order_details(orderdetails_id int(3),
+order_restaurant int(3),
+order_product_id int(3),
+order_quantity int(2) not null,
+foreign key (order_restaurant) references restaurants_list(restaurant_id),
+foreign key (orderdetails_id) references order_history(order_id),
+foreign key (order_product_id) references products_list(product_id)
+);
+
+create table paymentcard_details(paymentcard_customer int(3),
+paymentcard_type enum('credit card','debit card','master card') not null,
+paymentcard_number int(12) not null,
+paymentcard_cvv int(3) not null,
+paymentcard_expirydate date not null,
+foreign key (paymentcard_customer)
+references customers_list(customer_id)
+);
+
+create table feedback(feedback_customer int(3),
+feedback_rating enum('1','2','3','4','5') not null,
+feedback_remarks varchar(200),
+foreign key (feedback_customer)
+references customers_list(customer_id)
+);
+
+create table employee_tip(tip_order_id int(3),
+tip_employee_id int(3),
+tip_amount float(5) not null,
+foreign key (tip_order_id)
+references order_history(order_id),
+foreign key (tip_employee_id)
+references employees_list(employee_id)
+);

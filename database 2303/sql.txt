@@ -1,0 +1,105 @@
+select * from employees INNER JOIN departments on code = department;
++-----------+-----------+-----------+------------+------+-----------------+--------+
+| ssn       | name      | lastname  | department | code | name            | budget |
++-----------+-----------+-----------+------------+------+-----------------+--------+
+| 123234877 | Michael   | Rogers    |         14 |   14 | IT              |  65000 |
+| 152934485 | Anand     | Manikutty |         14 |   14 | IT              |  65000 |
+| 332154719 | Mary-Anne | Foster    |         14 |   14 | IT              |  65000 |
+| 845657245 | Elizabeth | Doe       |         14 |   14 | IT              |  65000 |
+| 845657246 | Kumar     | Swamy     |         14 |   14 | IT              |  65000 |
+| 222364883 | Carol     | Smith     |         37 |   37 | Accounting      |  15000 |
+| 326587417 | Joe       | Stevens   |         37 |   37 | Accounting      |  15000 |
+| 546523478 | John      | Doe       |         59 |   59 | Human Resources | 240000 |
+| 654873219 | Zacary    | Efron     |         59 |   59 | Human Resources | 240000 |
+| 745685214 | Eric      | Goldsmith |         59 |   59 | Human Resources | 240000 |
+| 332569843 | George    | ODonnell  |         77 |   77 | Research        |  55000 |
+| 631231482 | David     | Smith     |         77 |   77 | Research        |  55000 |
++-----------+-----------+-----------+------------+------+-----------------+--------+
+12 rows in set (0.026 sec)
+
+
+
+
+
+
+=======================================================================================================
+
+
+group by
+
+select name from employees group by name;
++-----------+
+| name      |
++-----------+
+| Anand     |
+| Anmol     |
+| Carol     |
+| David     |
+| Elizabeth |
+| Eric      |
+| George    |
+| Joe       |
+| John      |
+| Kumar     |
+| Mary-Anne |
+| Michael   |
+| Rizul     |
+| Zacary    |
++-----------+
+
+
+====================================================================================================
+
+select department,count(*) from employees group by department;
++------------+----------+
+| department | count(*) |
++------------+----------+
+|       NULL |        2 |
+|         14 |        5 |
+|         37 |        2 |
+|         59 |        3 |
+|         77 |        2 |
++------------+----------+
+5 rows in set (0.033 sec)
+
+ select department,count(*) from employees where department = 14 group by department;
++------------+----------+
+| department | count(*) |
++------------+----------+
+|         14 |        5 |
++------------+----------+
+1 row in set (0.001 sec)
+=================================================================
+ select department,count(*) from employees group by department having count(*) = 2;
++------------+----------+
+| department | count(*) |
++------------+----------+
+|       NULL |        2 |
+|         37 |        2 |
+|         77 |        2 |
++------------+----------+
+select department,sum(salary) from employees group by department;
++------------+-------------+
+| department | sum(salary) |
++------------+-------------+
+|       NULL |        2000 |
+|         14 |        5000 |
+|         37 |        2000 |
+|         59 |        3000 |
+|         77 |        2000 |
++------------+-------------+
+5 rows in set (0.000 sec)
+
+
+
+select department,sum(salary) from employees group by department order by sum(salary);
++------------+-------------+
+| department | sum(salary) |
++------------+-------------+
+|         77 |        2000 |
+|       NULL |        2000 |
+|         37 |        2000 |
+|         59 |        3000 |
+|         14 |        5000 |
++------------+-------------+
+5 rows in set (0.001 sec)

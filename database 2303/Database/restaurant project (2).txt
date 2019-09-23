@@ -1,0 +1,325 @@
+create database uber_eats;
+
+use uber_eats;
+
+create table employees_list (
+	employee_id INT primary key,
+	employee_name VARCHAR(50) not null,
+	employee_address VARCHAR(50) not null,
+	employee_email VARCHAR(40) not null,
+	employee_gender enum('male','female','other') not null,
+	employee_phone varchar(15) not null
+);
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (1, 'Page Breckon', '468 Caliangt Way', 'pbreckon0@blogs.com', 'Female', '558-367-0312');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (2, 'Bordie Joan', '5 Dryden Hill', 'bjoan1@arizona.edu', 'Male', '664-844-8057');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (3, 'Rudiger McLaren', '19578 Dwight Junction', 'rmclaren2@businesswire.com', 'Male', '619-473-5055');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (4, 'Rossie Tabert', '83813 Lukken Court', 'rtabert3@va.gov', 'Male', '239-543-9250');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (5, 'Dominique Mogenot', '517 Farmco Way', 'dmogenot4@cafepress.com', 'Male', '917-637-7026');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (6, 'Mayer Pullman', '662 Beilfuss Point', 'mpullman5@prweb.com', 'Male', '480-826-5140');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (7, 'Micheline Monsey', '05 Farragut Trail', 'mmonsey6@google.es', 'Female', '320-792-7850');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (8, 'Monty Stroband', '47923 Melody Circle', 'mstroband7@vk.com', 'Male', '928-934-1837');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (9, 'Ade Navan', '87 Troy Street', 'anavan8@squidoo.com', 'Male', '495-494-9610');
+insert into employees_list (employee_id, employee_name, employee_address, employee_email, employee_gender, employee_phone) values (10, 'Miran Maydway', '4 Mayer Lane', 'mmaydway9@admin.ch', 'Female', '860-146-1315');
+
+
+create table customers_list (
+	customer_id INT primary key,
+	customer_name VARCHAR(50) not null,
+	customer_address VARCHAR(50) not null,
+	customer_email VARCHAR(50) not null,
+	customer_gender enum('male','female','other') not null,
+	customer_phone VARCHAR(15) not null
+);
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (1, 'Hernando Richardeau', '70099 Randy Trail', 'hrichardeau0@fotki.com', 'Male', '314-760-9969');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (2, 'Humphrey Steel', '74221 Corry Road', 'hsteel1@earthlink.net', 'Male', '730-141-2318');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (3, 'Tess Sturdy', '8266 Dawn Point', 'tsturdy2@delicious.com', 'Female', '989-939-0218');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (4, 'Suzie MacAvaddy', '62 Arapahoe Point', 'smacavaddy3@bloglovin.com', 'Female', '552-574-4908');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (5, 'Redd Cullinan', '67 Summerview Avenue', 'rcullinan4@behance.net', 'Male', '685-598-8028');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (6, 'Morganica Henrichsen', '01 Bluejay Place', 'mhenrichsen5@elegantthemes.com', 'Female', '899-712-8820');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (7, 'Skyler Grenter', '13353 Gina Junction', 'sgrenter6@github.io', 'Male', '798-836-2184');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (8, 'Willi Sheehy', '8811 Pepper Wood Parkway', 'wsheehy7@stumbleupon.com', 'Female', '218-929-7640');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (9, 'Dominique Chettle', '093 Parkside Hill', 'dchettle8@baidu.com', 'Male', '289-720-4158');
+insert into customers_list (customer_id, customer_name, customer_address, customer_email, customer_gender, customer_phone) values (10, 'Trescha Jiggen', '2504 Lakewood Plaza', 'tjiggen9@elpais.com', 'Female', '264-453-7560');
+
+create table restaurants_list(restaurant_id int(3) primary key,
+restaurant_name varchar(30) not null,
+restaurant_address varchar(50) not null,
+restaurant_phone varchar(15) not null,
+restaurant_email nvarchar(30) not null);
+
+insert into restaurants_list values(1, 'Prem Sweets', '48225 Thackeray Center', '626-827-3271', 'osmows120@phpbb.com'),
+(2, 'Subway', '15 Roxbury Terrace', '529-567-0910', 'subway125@sogou.com'),
+(3, 'Mcdonalds', '2161 Westport Court', '244-397-6703', 'mocdonalds234@homestead.com'),
+(4, 'Tim Hortons', '9 Melrose Parkway', '332-679-2498', 'timhortons12B@sourceforge.net'),
+(5, 'India Taste', '2375 Troy Way', '900-321-4361', 'itaste61@digg.com');
+
+create table products_list(product_id int(3) primary key,
+product_name varchar(30) not null, 
+product_description enum('vegetarian','non-vegetarian') not null,
+product_price float(5) check (product_price > 0));
+
+insert into products_list values(1,'butter chicken','non-vegetarian',10.50),
+(2,'karahi paneer','vegetarian',12),
+(3,'Dal Makhani','vegetarian',9),
+(4,'Plain Naan','vegetarian',2.50),
+(5,'Chole Bhature','vegetarian',8.50),
+(6,'Amritsari Kulcha','vegetarian',9.75),
+(7,'Lemon Chicken','non-vegetarian',11.50),
+(8,'Chicken Teryaki','non-vegetarian',15.00),
+(9,'Italian Pasta','non-vegetarian',12.25),
+(10,'Chicken Salad','non-vegetarian',8.50),
+(11,'Potato Crisper','vegetarian',2.25),
+(12,'French Fries','vegetarian',2.30),
+(13,'Junior Chicken','non-vegetarian',1.75),
+(14,'Veggie Wrap','vegetarian',8.75);
+
+
+create table menu_list(menu_id int(3) primary key,
+menu_restaurant int(3),
+menu_product int(3), foreign key (menu_restaurant) references restaurants_list(restaurant_id),foreign key (menu_product) references products_list(product_id));
+
+insert into menu_list values(1,1,1),
+(2,1,2),
+(3,1,3),
+(4,1,4),
+(5,1,6),
+(6,2,8),
+(7,2,14),
+(8,2,9),
+(9,2,11),
+(10,2,10),
+(11,3,14),
+(12,3,12),
+(13,3,11),
+(14,4,13),
+(15,4,14),
+(16,4,12),
+(17,5,5),
+(18,5,7),
+(19,5,4),
+(20,5,6);
+
+create table order_history(order_id int(3) primary key,
+order_customer int(3), 
+order_employee int(3),
+order_date date not null, 
+order_status enum('on the way','in processing','delivered','cancelled') DEFAULT 'IN PROCESSING', 
+order_payment_type enum('Cash','Card') not null,
+foreign key (order_customer)
+references customers_list(customer_id),
+foreign key (order_employee)
+references employees_list(employee_id)
+);
+
+create table order_details(orderdetails_id int(3),
+order_restaurant int(3),
+order_product_id int(3),
+order_quantity int(2) not null,
+foreign key (order_restaurant) references restaurants_list(restaurant_id),
+foreign key (orderdetails_id) references order_history(order_id),
+foreign key (order_product_id) references products_list(product_id)
+);
+
+INSERT INTO ORDER_HISTORY VALUES(1,3,5,CURDATE(),3,2),
+(2,2,4,CURDATE(),2,2),
+(3,6,7,CURDATE(),2,1),
+(4,1,2,CURDATE(),2,1),
+(5,3,10,CURDATE(),2,2),
+(6,9,2,CURDATE(),2,2);
+
+
+
+INSERT INTO ORDER_DETAILS VALUES(1,1,1,3),(1,1,2,2),(1,1,6,5),(2,2,8,4),(2,2,14,2),(2,2,9,6),(2,2,10,5),
+(3,5,7,8),(3,5,4,2),(3,5,6,3),(4,4,8,4),(4,4,13,3),(5,2,12,3),(5,1,4,3),(5,1,2,3),(5,1,1,4),(6,3,12,8);
+
+
+
+
+
+create table paymentcard_details(paymentcard_customer int(3),
+paymentcard_type enum('credit card','debit card','master card') not null,
+paymentcard_number int(12) not null,
+paymentcard_cvv int(3) not null,
+paymentcard_expirydate date not null,
+foreign key (paymentcard_customer)
+references customers_list(customer_id)
+);
+
+create table feedback(feedback_customer int(3),
+feedback_rating enum('1','2','3','4','5') not null,
+feedback_remarks varchar(200),
+foreign key (feedback_customer)
+references customers_list(customer_id)
+);
+
+
+insert into paymentcard_details values(1,'credit card','45872564874','426','2021-09-05'),
+(1,'debit card','65872541452','352','2023-10-11'),
+(2,'master card','65872541452','251','2020-02-21'),
+(4,'credit card','32154723698','715','2022-04-23'),
+(8,'master card','36514885214','584','2021-11-30'),
+(5,'master card','65872541452','352','2023-10-11'),
+(4,'master card','25698441469','654','2024-06-29'),
+(3,'debit card','95856971577','821','2022-11-15'),
+(7,'credit card','59874152474','587','2019-05-29');
+
+insert into feedback values(2,3,'good service with excellent food quality'),
+(3,5,'excellent service. I am very happy to the service of uber eats . '),
+(6,4,'First time ordering from uber eats fantastic service, fast'),
+(7,1,'Lousy service. Uou order and wait Donot bother tipping. '),
+(9,2,'The worst app i ever used...not at all secured.');
+
+create table employee_tip(tip_order_id int(3),
+tip_employee_id int(3),
+tip_amount float(5) not null,
+foreign key (tip_order_id)
+references order_history(order_id),
+foreign key (tip_employee_id)
+references employees_list(employee_id)
+);
+
+insert into employee_tip values(1,5,10.35),
+(2,2,2.75),
+(4,7,8.25),
+(5,10,5.50),
+(6,2,6.80);
+
+select * from employees_list;
+
+select * from customers_list;
+
+select * from restaurants_list;
+
+select * from products_list;
+
+select * from menu_list;
+
+select * from order_history;
+
+select * from order_details;
+
+select * from paymentcard_details;
+
+select * from feedback;
+
+select * from employee_tip;
+
+
+desc employees_list;
+
+desc customers_list;
+
+desc restaurants_list;
+
+desc products_list;
+
+desc menu_list;
+
+desc order_history;
+desc order_details;
+
+desc paymentcard_details;
+desc feedback;
+desc employee_tip;
+
+// to show particular restaurant's products available:
+
+select restaurants_list.restaurant_name,products_list.* from products_list,menu_list,restaurants_list where menu_restaurant=restaurant_id AND menu_product = product_id AND restaurant_name='Subway';
+
+
+// to show all different restaurant's products available:
+
+select restaurants_list.restaurant_name,products_list.* from products_list,menu_list,restaurants_list where menu_restaurant=restaurant_id AND menu_product = product_id;
+
+select restaurants_list.restaurant_name,products_list.* from menu_list JOIN restaurants_list ON menu_restaurant=restaurant_id JOIN products_list ON menu_product = product_id;
+
+// TO SHOW THE ORDER DETAILS FOR PARTICULAR ORDER ID
+
+SELECT ORDERDETAILS_ID,RESTAURANT_NAME,PRODUCTS_LIST.* FROM ORDER_DETAILS JOIN RESTAURANTS_LIST ON ORDER_RESTAURANT=RESTAURANT_ID JOIN PRODUCTS_LIST ON ORDER_PRODUCT_ID=PRODUCT_ID WHERE ORDERDETAILS_ID=1;
++-----------------+-----------------+------------+------------------+---------------------+---------------+
+| ORDERDETAILS_ID | RESTAURANT_NAME | product_id | product_name     | product_description | product_price |
++-----------------+-----------------+------------+------------------+---------------------+---------------+
+|               1 | Prem Sweets     |          1 | butter chicken   | non-vegetarian      |          10.5 |
+|               1 | Prem Sweets     |          2 | karahi paneer    | vegetarian          |            12 |
+|               1 | Prem Sweets     |          6 | Amritsari Kulcha | vegetarian          |          9.75 |
++-----------------+-----------------+------------+------------------+---------------------+---------------+
+
+// TO SHOW PARTICULAR ORDER DETAILS WITH TOTAL AMOUNT
+
+SELECT ORDERDETAILS_ID,ORDER_QUANTITY,RESTAURANT_NAME,PRODUCTS_LIST.*,(ORDER_QUANTITY*PRODUCT_PRICE) 'TOTAL AMOUNT' FROM ORDER_DETAILS JOIN RESTAURANTS_LIST ON ORDER_RESTAURANT=RESTAURANT_ID JOIN PRODUCTS_LIST ON ORDER_PRODUCT_ID=PRODUCT_ID WHERE ORDERDETAILS_ID=1;
+
++-----------------+----------------+-----------------+------------+------------------+---------------------+---------------+--------------+
+| ORDERDETAILS_ID | ORDER_QUANTITY | RESTAURANT_NAME | product_id | product_name     | product_description | product_price | TOTAL AMOUNT |
++-----------------+----------------+-----------------+------------+------------------+---------------------+---------------+--------------+
+|               1 |              3 | Prem Sweets     |          1 | butter chicken   | non-vegetarian      |          10.5 |         31.5 |
+|               1 |              2 | Prem Sweets     |          2 | karahi paneer    | vegetarian          |            12 |           24 |
+|               1 |              5 | Prem Sweets     |          6 | Amritsari Kulcha | vegetarian          |          9.75 |        48.75 |
++-----------------+----------------+-----------------+------------+------------------+---------------------+---------------+--------------+
+
+
+// TO SHOW CUSTOMER AND EMPLOYEE DETAILS FOR PARTICULAR ORDER
+
+SELECT ORDER_ID,ORDER_DATE,CUSTOMERS_LIST.CUSTOMER_ID,CUSTOMERS_LIST.CUSTOMER_NAME,EMPLOYEES_LIST.EMPLOYEE_ID,EMPLOYEES_LIST.EMPLOYEE_NAME FROM ORDER_HISTORY
+JOIN CUSTOMERS_LIST ON ORDER_CUSTOMER=CUSTOMER_ID JOIN EMPLOYEES_LIST ON ORDER_EMPLOYEE=EMPLOYEE_ID WHERE ORDER_ID=1;
+
++----------+------------+-------------+---------------+-------------+-------------------+
+| ORDER_ID | ORDER_DATE | CUSTOMER_ID | CUSTOMER_NAME | EMPLOYEE_ID | EMPLOYEE_NAME     |
++----------+------------+-------------+---------------+-------------+-------------------+
+|        1 | 2019-09-10 |           3 | Tess Sturdy   |           5 | Dominique Mogenot |
++----------+------------+-------------+---------------+-------------+-------------------+
+
+
+// TO SHOW TOTAL AMOUNT FOR THE PARTICULAR ORDER ID 
+
+SELECT ORDERDETAILS_ID,SUM(ORDER_QUANTITY*PRODUCT_PRICE) 'TOTAL AMOUNT' FROM ORDER_DETAILS JOIN RESTAURANTS_LIST ON ORDER_RESTAURANT=RESTAURANT_ID JOIN PRODUCTS_LIST ON ORDER_PRODUCT_ID=PRODUCT_ID WHERE ORDERDETAILS_ID=1;
+
++-----------------+--------------+
+| ORDERDETAILS_ID | TOTAL AMOUNT |
++-----------------+--------------+
+|               1 |       104.25 |
++-----------------+--------------+
+
+// to show products of particular restaurant whether it is veg or non-veg
+
+select restaurants_list.restaurant_name,products_list.* from menu_list JOIN restaurants_list ON menu_restaurant=restaurant_id JOIN products_list ON menu_product = product_id where restaurant_name='prem sweets' AND product_description='vegetarian';
+
++-----------------+------------+------------------+---------------------+---------------+
+| restaurant_name | product_id | product_name     | product_description | product_price |
++-----------------+------------+------------------+---------------------+---------------+
+| Prem Sweets     |          2 | karahi paneer    | vegetarian          |            12 |
+| Prem Sweets     |          3 | Dal Makhani      | vegetarian          |             9 |
+| Prem Sweets     |          4 | Plain Naan       | vegetarian          |           2.5 |
+| Prem Sweets     |          6 | Amritsari Kulcha | vegetarian          |          9.75 |
++-----------------+------------+------------------+---------------------+---------------+
+
+// to show products of particular restaurant according to price
+
+select restaurants_list.restaurant_name,products_list.* from menu_list JOIN restaurants_list ON menu_restaurant=restaurant_id JOIN products_list ON menu_product = product_id where restaurant_name='prem sweets' AND product_price <=10;
+
++-----------------+------------+------------------+---------------------+---------------+
+| restaurant_name | product_id | product_name     | product_description | product_price |
++-----------------+------------+------------------+---------------------+---------------+
+| Prem Sweets     |          3 | Dal Makhani      | vegetarian          |             9 |
+| Prem Sweets     |          4 | Plain Naan       | vegetarian          |           2.5 |
+| Prem Sweets     |          6 | Amritsari Kulcha | vegetarian          |          9.75 |
++-----------------+------------+------------------+---------------------+---------------+
+
+// TO SHOW NUMBER OF CUSTOMERS BY PAYMENT TYPE (GROUP BY)
+
+select order_payment_type,count(*)'No. of Customers' from order_history GROUP BY order_payment_type;
+
++--------------------+------------------+
+| order_payment_type | No. of Customers |
++--------------------+------------------+
+| Cash               |                2 |
+| Card               |                4 |
++--------------------+------------------+
+
+ // select * from employees_list where employee_name IN 'M%' '%N';
+
+// select * from products_list ORDER BY product_price ASC;
+
+select * from products_list ORDER BY product_description;
+
+
+
