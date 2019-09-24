@@ -3,7 +3,7 @@ package com.lambton;
 import java.time.LocalDate;
 
 public class FullTime extends Faculty {
-    private float bonus = 500;
+    private float bonus;
 
     public FullTime(int id, String firstname, String lastname, LocalDate birthdate, String gender, String designation, int salary, String specialization,float bonus) {
         super(id, firstname, lastname, birthdate, gender, designation, salary, specialization);

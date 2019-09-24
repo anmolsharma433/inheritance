@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class MainExample {
     public static void main(String[] args)
     {
-        Person p1;
+
         /*
         Student s1 = new Student(1,"ANmol","Sharma", LocalDate.now(),"Male","MADT",2);
         p1=s1;
