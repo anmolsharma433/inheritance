@@ -2,10 +2,10 @@ package com.lambton;
 
 import java.time.LocalDate;
 
-public class Faculty extends Person {
-    String designation;
-    int salary;
-    String specialization;
+public abstract class Faculty extends Person {
+    private String designation;
+    private int salary;
+    private String specialization;
 
     public Faculty(int id, String firstname, String lastname, LocalDate birthdate, String gender, String designation, int salary, String specialization) {
         super(id, firstname, lastname, birthdate, gender);
@@ -52,4 +52,6 @@ public class Faculty extends Person {
 
 
     }
+
+    public abstract float calculatetotalsalary();
 }

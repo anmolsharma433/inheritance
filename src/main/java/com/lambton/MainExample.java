@@ -14,8 +14,13 @@ public class MainExample {
         s1.display();
          */
 
-        Faculty f1 =new Faculty(1,"Anmol","Sharma",LocalDate.now(),"MALE","Teacher",2000,"Android Development");
+        FullTime f1 =new FullTime(1,"Anmol","Sharma",LocalDate.now(),"MALE","TEACHER",5000,"ANDROID",500);
+        f1.calculatetotalsalary();
         f1.display();
+
+        PartTime pt1 = new PartTime(1,"Anmol","Sharma",LocalDate.now(),"MALE","TEACHER",5500,"SWIFT",60);
+        pt1.calculatetotalsalary();
+        pt1.display();
     }
 
 }
